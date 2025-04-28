@@ -36,12 +36,24 @@ def set_background():
         unsafe_allow_html=True
     )
 
+# Call the background setup
 set_background()
 
 # ----------------- Model Loading -----------------
 model = joblib.load("drug_model.pkl")
 
-# ----------------- Header -----------------
+# ----------------- Header Section -----------------
+
+# Center the image properly
+col1, col2, col3 = st.columns([1,2,1])  # Trick: 3 columns, middle one larger
+with col1:
+    st.write("")  # Empty
+with col2:
+    st.image("ChatGPT Image Apr 28, 2025, 10_37_21 AM.png", width=300)
+with col3:
+    st.write("")  # Empty
+
+# Title and Subtitle
 st.markdown("<h1 style='text-align: center; color: #00ffff;'>💊 Drug Effectiveness Predictor</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; color: #cccccc;'>Enter the patient's health details to predict drug effectiveness.</p>", unsafe_allow_html=True)
 
